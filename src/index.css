@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  width: 100% !important;
+  padding: 0 10px 0 10px !important;
+}
+
+.dropdown-item>a {
+  color: #212529 !important;
+  text-decoration: none !important;
+}
+
+.nav-link>a {
+  color: rgba(0, 0, 0, .55) !important;
+  text-decoration: none !important;
+}
+
+.navbar-brand>a>img {
+  width: 250px;
+  height: 65px;
+}
+
+.me-auto {
+  font-size: large;
+}
+
+.main-div {
+  display: grid !important;
+  justify-content: center;
+}
+
+.employee-table, .project-table {
+  margin: 10px 10px 10px 10px;
+}
+
+table>thead>tr>th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold !important;
+  text-align: -internal-center;
+}
+
+.employee-table > div, .project-table > div{
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+}
+
+td > button {
+  color: #f44336 !important;
+}
+
+.action-row {
+  padding: 0px !important;
+}
+
+.view-employee-table, .project-table , .table-container{
+  inline-size: min-content !important;
+  margin: auto !important;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+.center-heading {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.name-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.no-uppercase {
+  width: auto !important;
+  text-transform: unset !important;
+  color: grey !important;
+}
+
+.view-employee-head {
+  padding-left: 95px !important;
+  display: flex;
+}
+.emp-modal {
+  display: flex;
+}
+
+body > div.MuiModal-root.css-79ws1d-MuiModal-root {
+  overflow-y: auto;
+}
+/* .navbar-nav > .nav-item > a {
+  color: white !important;
+}
+.navbar-nav  > a >a {
+  color: white !important;
+} */
+
+div.MuiDataGrid-columnHeaderTitleContainerContent > div {
+  font-weight: 600;
+}
+
+.client_container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.client_container2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  margin-top: 50px;
+  align-items: center;
+}
+
+
+.allocation-range1 > div.react-datepicker-wrapper > div > input[type=text] {
+  height: 40px !important;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4375em;
+    letter-spacing: 0.00938em;
+    color: rgba(0, 0, 0, 0.87);
+    box-sizing: border-box;
+    cursor: text;
+    align-items: center;
+    width: 100%;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: thin;
+    border-color: darkgray !important;
+}
+
+.allocation-range1 > div.react-datepicker-wrapper > div.react-datepicker__input-container {
+  width: 23%;
+  padding-bottom: 1%;
+  padding-left: 0px;
+}
+
+div.allocation-range1 > div.react-datepicker-wrapper > div > svg {
+  margin: 3px 0 0 10px !important;
+}
+
+div.allocation-range1 > div.react-datepicker-wrapper > div > button.react-datepicker__close-icon {
+  padding: 0 6px 10px 0;
+}

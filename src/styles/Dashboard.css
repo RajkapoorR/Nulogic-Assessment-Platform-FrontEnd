@@ -1,0 +1,78 @@
+.dashboard-container {
+    margin-top: 30px;
+}
+
+.view1-view2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.view3-view4 {
+    display: flex;
+}
+
+.view-image {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container1 {
+    text-align: center;
+    height:308px;
+}
+
+.image-heading {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.image-heading1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 59px;
+}
+
+div.view1-view2>div>div.react-datepicker-wrapper>div,
+div.view3-view4>div>div.react-datepicker-wrapper>div {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.view1-view2>div>div.react-datepicker-wrapper>div>svg,
+.view3-view4>div>div.react-datepicker-wrapper>div>svg {
+    height: 2em !important;
+    padding: 0 !important;
+    margin: 3px 0 0 10px;
+}
+
+div.view1-view2>div>div.react-datepicker-wrapper>div>input[type=text],
+div.view3-view4>div>div.react-datepicker-wrapper>div>input[type=text] {
+    height: 40px !important;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4375em;
+    letter-spacing: 0.00938em;
+    color: rgba(0, 0, 0, 0.87);
+    box-sizing: border-box;
+    cursor: text;
+    align-items: center;
+    width: auto;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: thin;
+    border-color: darkgray !important;
+}
+
+.utilizationTableRow > tr > td:nth-child(2),
+.utilizationTableRow > tr > td:nth-child(3),
+.utilizationTableRow > tr > td:nth-child(4),
+div.image-container1 > div.employee-table > div > table > tbody > tr > td:nth-child(2) {
+    cursor: pointer;
+}

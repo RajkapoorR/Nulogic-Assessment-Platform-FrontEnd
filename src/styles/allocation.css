@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 4%;
+}
+#combo-box-demo, .field{
+  width:250px
+}
+.form-group {
+  margin-right: 16px;
+  width: 58%;
+  margin: 0.5rem;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+.form-row_1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+.form-group_2 {
+  margin: 0.5rem;
+}
+
+.form-row_2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.form-group_3 {
+  margin: 0.5rem;
+}
+
+.form-group_3 button {
+  margin: 0 auto;
+}
+
+.MuiButton-root {
+  margin-top: 16px;
+}
+
+.custom-datepicker {
+  height: 55px !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  cursor: text;
+  align-items: center;
+  width: 100%;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  border-color:darkgray !important;
+}
+div.form-row > div.datepicker-container > div > div.react-datepicker__input-container {
+    text-align: left;
+    padding-left: 15px;
+    margin-top: 8px;
+}
+
+.react-datepicker__calendar-icon {
+    height: 2em !important;
+    padding: 0 !important;
+    margin: 10px 0 0 10px;
+}
+
+.react-datepicker__view-calendar-icon input {
+  padding: 6px 10px 5px 40px !important;
+}
+.datepicker-container {
+ z-index: 999;
+}
