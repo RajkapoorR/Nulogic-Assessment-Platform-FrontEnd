@@ -19,6 +19,7 @@ export default function GoogleLoginForm() {
   useEffect(() => {
     if (user?.access_token) {
       localStorage.setItem("loginData", JSON.stringify(user));
+      sessionStorage.setItem('IsuserLogin',true)
       axios
         .get(
           `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,

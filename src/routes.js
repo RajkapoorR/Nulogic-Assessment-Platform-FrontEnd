@@ -12,9 +12,8 @@ import ScoreCard from "./pages/ScoreCard";
 
 export default function Router() {
   let userData;
-  try {
-    let userDetail = JSON.parse(localStorage.getItem("userDetails"));
-    userData = userDetail?.role?.weightage;
+  try { 
+    userData =JSON.parse(sessionStorage.getItem('IsuserLogin'))
     console.log("route", userData);
   } catch (error) {
     console.error(error);
@@ -22,7 +21,7 @@ export default function Router() {
 
   return useRoutes([
     {
-      element: <DashboardLayout />,
+      element:userData? <DashboardLayout />: <Navigate to="/" replace />,
       children: [
         {
           path: "dashboard",
@@ -49,6 +48,10 @@ export default function Router() {
     {
       path: "logout",
       element: <Login />,
+    },
+    {
+      path: '*',
+      element: <Navigate to="/" replace />,
     },
     {
       path: "/",
