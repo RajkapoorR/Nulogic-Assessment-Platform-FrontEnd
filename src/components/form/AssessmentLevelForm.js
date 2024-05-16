@@ -114,9 +114,11 @@ export default function AssessmentLevelForm() {
     console.log("domain && level && code", domain, level, code)
     if (domain && level && code) {
       const data = await getQuestion(domain, level, code)
+     if(data?.success){
       navigate('/questionform', {
         ...data
       })
+     }
     }
   };
   return (

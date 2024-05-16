@@ -10,9 +10,12 @@ export const getQuestion = async (domain, level, code) => {
         );
         const body = await response.text()
         parsedResponse = JSON.parse(body);
+        if(parsedResponse?.success===false){
+            alert(parsedResponse?.errors)
+        }
         return parsedResponse;
     } catch (error) {
-        console.error('Error fetching data:', error);
+        throw(error) 
     }
     return parsedResponse;
 }

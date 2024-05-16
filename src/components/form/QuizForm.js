@@ -83,7 +83,7 @@ function QuizForm() {
                   {item.questionNumber}.{item.questionText}
                 </label>
                 <div>
-                  {item.options.map((opt, index) => (
+                  {item?.options?.map((opt, index) => (
                     <Stack
                       key={opt}
                       sx={{
@@ -96,9 +96,9 @@ function QuizForm() {
                       <input
                         type="radio"
                         id={opt}
-                        name={item.questionNumber}
+                        name={item?.questionNumber}
                         value={opt}
-                        checked={answers[item.questionNumber] === index}
+                        checked={answers[item?.questionNumber] === index}
                         onChange={() =>
                           handleAnswerChange(item.questionNumber, index)
                         }
