@@ -13,7 +13,7 @@ import { useState } from "react";
 import { getQuestion } from "../utils/getQuestion";
 import { useNavigate } from "react-router-dom";
 
-export default function AssessmentTable({ email, data, handleClick }) {
+export default function AssessmentTable({ email}) {
   const [assesmentData, setAssesmentData] = useState([]);
   const navigate = useNavigate();
 
@@ -62,7 +62,7 @@ export default function AssessmentTable({ email, data, handleClick }) {
                 variant={"contained"}
                 sx={{ mb: "20px", color: 'white !important' }}
                 onClick={async () => {
-                  const data = await getQuestion(row.domain, row.level, row.questionCode)
+                  const data = await getQuestion(row.domain, row.level, row.questionCode,email)
                   navigate('/questionform', {
                     ...data
                   })

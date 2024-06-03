@@ -18,9 +18,6 @@ function QuizForm() {
     }));
   };
 
-  console.log(state)
-
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,7 +25,7 @@ function QuizForm() {
     const selectedAnswers = state?.questionList.map((question) => ({
       questionNumber: question.questionNumber,
       questionText: question.questionText,
-      correctOptionIndex: answers[question.questionNumber],
+      correctOption: answers?.[question.questionNumber],
     }));
 
     const data = {
@@ -48,12 +45,12 @@ function QuizForm() {
       );
       const body = await response.text()
       const parsedResponse = JSON.parse(body);
-      setShowPopUp(true)
       setScoreData(parsedResponse?.state);
-      console.log(parsedResponse)
-      console.log("userScore",parsedResponse?.state)
       if (parsedResponse?.success === false) {
         alert(parsedResponse?.errors)
+      }
+      if(parsedResponse?.success===true){
+        setShowPopUp(true)
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -67,7 +64,6 @@ function QuizForm() {
         {state?.domain} - {state?.level}
         </Typography>
       </Stack>
-      {console.log(scoreData)}
       {popup &&
         <ScorePopUp showPopup={popup} score={scoreData} />
       }
@@ -83,7 +79,7 @@ function QuizForm() {
                   {item.questionNumber}.{item.questionText}
                 </label>
                 <div>
-                  {item?.options?.map((opt, index) => (
+                  {item?.options?.map((opt) => (
                     <Stack
                       key={opt}
                       sx={{
@@ -98,9 +94,9 @@ function QuizForm() {
                         id={opt}
                         name={item?.questionNumber}
                         value={opt}
-                        checked={answers[item?.questionNumber] === index}
+                        checked={answers?.[item?.questionNumber] === opt}
                         onChange={() =>
-                          handleAnswerChange(item.questionNumber, index)
+                          handleAnswerChange(item.questionNumber, opt)
                         }
                         required
                       />

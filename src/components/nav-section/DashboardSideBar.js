@@ -9,6 +9,7 @@ import Logo from "../Logo";
 import Scrollbar from "./Scrollbar";
 import Iconify from "../iconify/Iconify";
 import NavSection from "./TopNav";
+import '../../App.css';
 const getIcon = (name) => <Iconify icon={name} width={22} height={22} />;
 
 const DRAWER_WIDTH = 200;
@@ -97,6 +98,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   );
 
   return (
+    <div id='bg'> 
     <RootStyle>
       {!isDesktop && (
         <Drawer
@@ -126,5 +128,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         </Drawer>
       )}
     </RootStyle>
+    </div>
   );
 }

@@ -18,13 +18,13 @@
     margin: 10px;
 }
 
-.image-container {
+.image-conainer {
     text-align: center;
 }
 
 .image-container1 {
     text-align: center;
-    height:308px;
+    height:308pxt;
 }
 
 .image-heading {
@@ -76,3 +76,4 @@ div.view3-view4>div>div.react-datepicker-wrapper>div>input[type=text] {
 div.image-container1 > div.employee-table > div > table > tbody > tr > td:nth-child(2) {
     cursor: pointer;
 }
+

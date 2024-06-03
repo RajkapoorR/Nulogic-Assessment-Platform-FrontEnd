@@ -15,15 +15,18 @@ import AssessmentTable from "../components/AssessmentTable";
 import UserInput from "../components/inputfield/InputField";
 import AssignTaskForm from "../components/form/AssignTaskForm";
 import { useState } from "react";
+import Domain from "../components/domain/Domain";
 
 export default function AssessmentList() {
   const [auth, setAuth] = React.useState(true);
   const [data, setData] = useState({});
   const [domain, setDomain] = useState({})
+
   const userProfileData = localStorage.getItem('userProfile');
   const userProfile = JSON.parse(userProfileData);
   const email = userProfile?.email;
 
+  console.log(domain)
   React.useEffect(() => {
     const fetchDataAsync = async () => {
       try {
@@ -58,7 +61,7 @@ export default function AssessmentList() {
     formData.append('file', fileName);
     formData.append('fileName', 'abcd'); 
     try {
-      const response = await fetch(`http://localhost:8000/rest/v1/assessment/upload`, {
+      const response = await fetch(`http://localhost:8000/rest/v1/assessment/upload-csv`, {
         method: 'POST',
         body: formData,
         'Content-Type': 'multipart/form-data; boundary=—-WebKitFormBoundaryfgtsKTYLsT7PNUVD'
@@ -75,35 +78,34 @@ export default function AssessmentList() {
       console.error('Error fetching data:', error);
     }
   };
+  // React.useEffect(() => {
+  //   const fetchDomain = async () => {
+  //     try {
+  //       const response = await fetch(`http://localhost:8000/rest/v1/assessment/questionCodes`, {
+  //         method: 'GET',
+  //         headers: {
+  //           'Content-Type': 'application/json'
+  //         }
+  //       });
+  //       const body = await response.text();
+  //       const parsedResponse = JSON.parse(body);
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       setDomain(parsedResponse?.state?.domains);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
 
-  React.useEffect(() => {
-    const fetchDomain = async () => {
-      try {
-        const response = await fetch(`http://localhost:8000/rest/v1/assessment/questionCodes`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        const body = await response.text();
-        const parsedResponse = JSON.parse(body);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        setDomain(parsedResponse?.state?.domains);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchDomain();
-  }, []);
+  //   fetchDomain();
+  // }, []);
 
 
   return (
     <>
       <Page title="Asessment">
-        <Container>
+        <div>
           {
             data?.userRole === 'admin' ? (<><Stack
               direction="row"
@@ -136,7 +138,11 @@ export default function AssessmentList() {
               justifyContent="space-between"
             >
                 <AssignTaskForm data={domain} email={data} />
-              </Stack></>)
+              </Stack>
+              <Stack>
+              <Domain />
+              </Stack>
+              </>)
               : (<><Stack
                 direction="row"
                 alignItems="center"
@@ -158,7 +164,7 @@ export default function AssessmentList() {
                     Assigned Assessment
                   </Typography>
                 </Stack><AssessmentTable email={email} /></>)}
-        </Container>
+        </div>
       </Page>
     </>
   );

@@ -20,6 +20,7 @@ export default function AdminScoreTable({ data, email }) {
   const [scoreData, setScoreData] = useState([]);
   const [show, setShow] = useState(false);
   const [userEmail, setUserEmail] = useState([]);
+  const [firstName, setFirstName] = useState([]);
 
 
   React.useEffect(() => {
@@ -43,6 +44,11 @@ export default function AdminScoreTable({ data, email }) {
     setShow(true);
     setUserEmail(item);
   }
+  
+  const extractFirstName = (userEmail) => {
+    const username = userEmail?.split('.')[0]; // Extract username part before @ symbol
+    return username?.charAt(0)?.toUpperCase() + username?.slice(1); // Capitalize first letter
+};
 
   return (
     <>
@@ -88,7 +94,7 @@ export default function AdminScoreTable({ data, email }) {
         </>)
         : (
           <><Typography variant="h5" sx={{ mb: "30px" }}>
-            Performance Report
+            Performance Report of {extractFirstName(userEmail)}
           </Typography><ObtainedScoreTable email={userEmail} /></>
         )}
     </>

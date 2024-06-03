@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+#bg,body {
+  background-image: url('https://img.freepik.com/premium-photo/abstract-blur-exhibition-hallway-corridor-background_488220-21231.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

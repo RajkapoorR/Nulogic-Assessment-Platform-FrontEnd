@@ -7,6 +7,7 @@ import QuizForm from "./components/form/QuizForm";
 import AssessmentList from "./pages/Assessment";
 import AssessmentLevelForm from "./components/form/AssessmentLevelForm";
 import ScoreCard from "./pages/ScoreCard";
+import Search from "./components/Search";
 
 // ----------------------------------------------------------------------
 
@@ -42,6 +43,10 @@ export default function Router() {
         {
           path: "scorecard",
           element: <ScoreCard />,
+        },
+        {
+          path: "search",
+          element: <Search />,
         },
       ],
     },

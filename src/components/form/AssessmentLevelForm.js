@@ -20,6 +20,9 @@ export default function AssessmentLevelForm() {
   const defaultValues = {
     userRole: "",
   };
+  const userProfileData = localStorage.getItem('userProfile');
+  const userProfile = JSON.parse(userProfileData);
+  const email = userProfile?.email;
 
   const navigate = useNavigate();
 
@@ -30,7 +33,7 @@ export default function AssessmentLevelForm() {
   const getDomain = async () => {
 
     try {
-      const response = await fetch(`http://localhost:8000/rest/v1/assessment/domains`, {
+      const response = await fetch(`http://localhost:8000/rest/v1/assessment/domains?email=${email}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -84,7 +87,7 @@ export default function AssessmentLevelForm() {
     const getCode = async () => {
 
       try {
-        const response = await fetch(`http://localhost:8000/rest/v1/assessment/questionCodes`, {
+        const response = await fetch(`http://localhost:8000/rest/v1/assessment/questionCodes?email=${email}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'
@@ -113,7 +116,8 @@ export default function AssessmentLevelForm() {
   const onSubmit = async (data) => {
     console.log("domain && level && code", domain, level, code)
     if (domain && level && code) {
-      const data = await getQuestion(domain, level, code)
+      console.log(email)
+      const data = await getQuestion(domain, level, code,email)
      if(data?.success){
       navigate('/questionform', {
         ...data
